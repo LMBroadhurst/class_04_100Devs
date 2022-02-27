@@ -1,0 +1,24 @@
+/* NO classes or IDs */
+/* Please Make only World and Zebra Blue */
+
+/* Please Make only Zebra Purple */
+
+/* Please Make only Hufflepuff Gold */
+
+/* Please keep Hufflepuff Gold and make ONLY Unicorn Gray  */
+
+section {
+    color: blue;
+}
+
+section h2 + h2 {
+    color: purple;
+}
+
+section article {
+    color: gray;
+}
+
+section article h2 + h2 {
+    color: gold;
+}
