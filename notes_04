@@ -1,0 +1,164 @@
+CSS
+
+Where does the CCS go?
+
+- In a seperate file. This is to follow "seperation of concerns".
+
+Exception to this...
+
+- Can use inline style for emails ONLY
+- In the head only if it's companies like Amazon, above the fold CSS only 
+
+
+Use a seperate CSS file...
+
+It is best practise to put CSS in its own file and link to it from the <head>!
+
+<link rel="stylesheet" href="css/style.css">
+
+
+The following is a RULE...
+
+p {
+    color: red;
+    font-weight: bold;
+}
+
+p is the selector, e.g. h1, nav-bar
+color is the property, e.g. background, font size
+red is the property value
+The declarations are the properties : property value
+{} is the declaration block
+This will style all the p elements with the same properties
+
+
+
+CSS is read top to bottom
+
+Therefore what is written above, can be over written by what comes below
+- This is called the cascade
+
+
+Why might we want to link to a serperate CSS file?
+- Seperation of concerns
+
+Common Attributes:
+
+Color: we can use words, Hex, RGBa, HSLa, to define a color
+
+Font-family: Fonts are actually files, if we want to use a non-default font we may have to download or add a font into our header
+                e.g. google fonts have lots of different fonts and host the font on their server
+                We should put our font imports in the head of our HTML
+
+                <link> href="font link" rel="stylesheet">
+
+                When we import fonts, we must remember to specifically choose the weights we are going to use.
+                Dont just import everything as it adds stress on the load.
+
+USE THE MDN to research any CSS problems.
+
+
+
+Targeting specific elements...
+
+Selecting by relationship:
+- To select an element that is the direct descendent of another element use
+
+e.g. PARENT > CHILD
+
+<section>
+    <p>Hello, Twitch!</p>
+</section>
+
+section > p {
+    color: red;
+}
+
+> = direct child
+
+Only paragraphs that are direct children of a section would be CSS'd
+
+
+To select an element that is inside of another element without being directly
+descended, use parent element
+
+<section>
+    <article>
+        <p>Hello, Twitch!</>
+    </article>
+</section>
+
+section p {
+    color: red;
+}
+
+
+DIRECT SIBLING
+
+To select an element that is the next sibling in use
+
+<section>
+    <p>Hello, Twitch!</p>
+    <p>Hello, YouTube!</p>
+</section>
+
+p + p {
+    color: red;
+}
+
+In this instance, only the "Hello, YouTube" string will be targeted. It is the 
+only p that has a p that comes before it.
+
+
+
+
+IDs and Classes
+
+IDs are ways of selecting distinct elements
+Only use ONE id with the same value per document
+
+#IDName
+
+<section>
+    <p>Hello, Twitch!</p>
+    <p id="zebra">Hello, Youtube!</p>
+</section>
+
+#zebra {
+    color: red;
+}
+
+
+CLASSES are for selecting multiple elements
+Multiple with same value allowed per document
+
+.className
+
+<section>
+    <p class="robot">Hello, Twitch!</p>
+    <p id="zebra" class="bob">Hello, Youtube!</p>
+    <p class="bob">Goodbye, Mixer!</p>
+</section>
+
+.bob {
+    color: red;
+}
+
+
+
+
+Specificity
+
+Tags = 1 point
+Classes = 10 points
+IDs = 100 points
+!important/Inline Style = 1000 points
+
+!important (CSS ONLY)
+- Only use this when you can't figure out the CSS on a short deadline,
+which you then later go back to fix
+
+
+HW:
+Simple Site Lab
+Dr. Iona Black - http://learnlayout.com
